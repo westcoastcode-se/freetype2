@@ -4,7 +4,7 @@
 /*                                                                         */
 /*    Unix-specific FreeType low-level system interface (body).            */
 /*                                                                         */
-/*  Copyright 1996-2017 by                                                 */
+/*  Copyright 1996-2018 by                                                 */
 /*  David Turner, Robert Wilhelm, and Werner Lemberg.                      */
 /*                                                                         */
 /*  This file is part of the FreeType project, and may only be used,       */
@@ -95,7 +95,7 @@
   /*                                                                       */
   FT_CALLBACK_DEF( void* )
   ft_alloc( FT_Memory  memory,
-            long       size )
+            size_t     size )
   {
     FT_UNUSED( memory );
 
@@ -125,8 +125,8 @@
   /*                                                                       */
   FT_CALLBACK_DEF( void* )
   ft_realloc( FT_Memory  memory,
-              long       cur_size,
-              long       new_size,
+              size_t     cur_size,
+              size_t     new_size,
               void*      block )
   {
     FT_UNUSED( memory );
@@ -173,7 +173,7 @@
   /* messages during execution.                                            */
   /*                                                                       */
 #undef  FT_COMPONENT
-#define FT_COMPONENT  trace_io
+#define FT_COMPONENT  io
 
   /* We use the macro STREAM_FILE for convenience to extract the       */
   /* system-specific stream handle from a given FreeType stream object */
